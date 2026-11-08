@@ -44,9 +44,8 @@ jobs:
       - name: Commit
         run: |
           mkdir -p assets/generated
-          mv profile-3d-contrib/skyline-*.svg assets/generated/
-          mv snake-out/*.svg assets/generated/
-          rm -rf profile-3d-contrib snake-out
+          # cp, not mv: the snake action runs in Docker and leaves root-owned files
+          cp profile-3d-contrib/skyline-*.svg snake-out/*.svg assets/generated/
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A README.md assets/generated
