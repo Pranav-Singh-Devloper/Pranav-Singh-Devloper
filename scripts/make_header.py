@@ -12,10 +12,10 @@ from theme import MONO, SANS, SERIF, THEMES, esc
 W, H = 1200, 320
 ROOT = Path(__file__).resolve().parent.parent
 
-EYEBROW = "OPEN SOURCE · AI/ML · IST (UTC+5:30)"
+EYEBROW = "OPEN SOURCE × AI/ML"
 NAME = "Pranav Singh"
 TAGLINE = [
-    "AI/ML engineer and open-source contributor. I build",
+    "I build AI/ML in the open and fix bugs upstream:",
     "agent memory, research agents and graph models.",
 ]
 CHIPS = ["open-source", "agents", "memory", "gnns", "tokenizers", "evals"]

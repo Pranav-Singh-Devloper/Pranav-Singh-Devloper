@@ -1,12 +1,12 @@
 <a href="https://github.com/Pranav-Singh-Devloper">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-    <img alt="Pranav Singh, AI/ML engineer and open-source contributor building agent memory, research agents and graph models" src="assets/header-light.svg" width="100%">
+    <img alt="Pranav Singh: open source × AI/ML. I build AI/ML in the open and fix bugs upstream" src="assets/header-light.svg" width="100%">
   </picture>
 </a>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=2600&pause=1100&color=FF6B5B&center=true&vCenter=true&width=760&height=34&lines=%3E%3E%3E+fixing+bugs+upstream%3A+JdeRobot%2C+crewAI%2C+Apicurio;%3E%3E%3E+giving+AI+agents+a+memory+that+knows+when+facts+changed;%3E%3E%3E+forecasting+LA+freeway+traffic+with+graph+attention;%3E%3E%3E+writing+tokenizers+from+scratch+until+they+match+GPT-2" alt="What I'm working on">
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=500&size=17&duration=2600&pause=1100&color=FF6B5B&center=true&vCenter=true&width=760&height=34&lines=%3E%3E%3E+read+the+source%2C+file+the+issue%2C+send+the+fix;%3E%3E%3E+fixing+bugs+upstream%3A+JdeRobot%2C+crewAI%2C+Apicurio;%3E%3E%3E+giving+AI+agents+a+memory+that+knows+when+facts+changed;%3E%3E%3E+forecasting+LA+freeway+traffic+with+graph+attention" alt="What I'm working on">
 </p>
 
 <p align="center">
@@ -20,13 +20,14 @@
 
 $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open issues}}\left[\mathcal{L}_{\text{merged}}(x;\theta)\right]$$
 
-## 👋 For GSoC, LFX and ESoC mentors
+## ❤️ Open source × AI/ML
 
-- **Who:** B.Tech CS & AI student at Newton School of Technology (2024–2028), preparing for **GSoC 2027, LFX Mentorship and the European Summer of Code**.
-- **How I contribute:** I reproduce the bug, file an issue with the evidence, then send a small, focused fix. Live list below.
-- **What I want to work on:** ML and LLM tooling (agent frameworks, memory and retrieval, evaluation), time-series and graph ML, and robotics software that uses deep learning.
-- **What I bring:** tests and CI from day one, written design decisions, reproducible pipelines and docs people can follow ([examples](#-how-i-work)).
-- **Reach me:** [email](mailto:pranav.singh2024@nst.rishihood.edu.in) or [LinkedIn](https://www.linkedin.com/in/pranav-singh-08155a244/). I'm on IST (UTC+5:30) and happy to overlap with European and US-East hours.
+> I learn a system by reading its source, and I say thanks by fixing what I find.
+
+- **Upstream:** robotics with deep learning at JdeRobot, agent frameworks at crewAI, API tooling at Apicurio. I reproduce the bug, file the issue, then send a small, focused fix.
+- **In the open:** my own AI/ML work is public, with tests, CI and written design decisions, so anyone can pick it up ([how I work](#-how-i-work)).
+- **Drawn to:** LLM tooling (agents, memory, retrieval, evaluation), time-series and graph ML, and robots that learn.
+- **Say hi:** [email](mailto:pranav.singh2024@nst.rishihood.edu.in) · [LinkedIn](https://www.linkedin.com/in/pranav-singh-08155a244/) · IST (UTC+5:30). Always happy to pair on an issue.
 
 ## 🌍 Upstream contributions
 
@@ -229,7 +230,7 @@ fine_tuned_on:
   - agent memory, research agents, graph forecasting, tokenizers
 capabilities:  [llm-agents, rag, agent-memory, gnns, tokenization, a/b-tests]
 languages:     [python, typescript, c++, sql]
-intended_use:  GSoC 2027 · LFX Mentorship · European Summer of Code
+intended_use:  reading, fixing and building open-source AI/ML
 evals:
   public_repos:             42
   contributions_last_12mo:  822
@@ -241,7 +242,7 @@ evals:
 known_limitations:
   - rebuilds things from scratch to understand them
   - won't ship a README without a benchmark table
-license:       MIT unless the repo says otherwise
+powered_by:    open source  # so I give back upstream
 last_trained:  2026-11-08  # refreshed daily by a GitHub Action
 ```
 <!--CARD:END-->
@@ -256,5 +257,5 @@ last_trained:  2026-11-08  # refreshed daily by a GitHub Action
 </picture>
 
 <p align="center">
-  <sub>The header, project cards, training run, skyline and snake are drawn by this repo's own <a href=".github/workflows/refresh-profile.yml">GitHub Action</a> and <a href="scripts">scripts</a>.</sub>
+  <sub>Built in the open. The header, project cards, training run, skyline and snake are drawn by this repo's own <a href=".github/workflows/refresh-profile.yml">GitHub Action</a> and <a href="scripts">scripts</a>. Fork anything.</sub>
 </p>
