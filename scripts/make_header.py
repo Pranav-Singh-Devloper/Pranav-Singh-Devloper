@@ -12,15 +12,15 @@ from theme import MONO, SANS, SERIF, THEMES, esc
 W, H = 1200, 320
 ROOT = Path(__file__).resolve().parent.parent
 
-EYEBROW = "PRANAV-SINGH / MODEL CARD · v2026"
+EYEBROW = "OPEN SOURCE · AI/ML · IST (UTC+5:30)"
 NAME = "Pranav Singh"
 TAGLINE = [
-    "AI/ML engineer building LLM agents, agent memory",
-    "and tokenizers from first principles.",
+    "AI/ML engineer and open-source contributor. I build",
+    "agent memory, research agents and graph models.",
 ]
-CHIPS = ["agents", "rag", "memory", "tokenizers", "gnns", "evals"]
-INPUTS = ["papers", "data", "curiosity"]
-OUTPUTS = ["ship", "learn"]
+CHIPS = ["open-source", "agents", "memory", "gnns", "tokenizers", "evals"]
+INPUTS = ["issues", "papers", "data"]
+OUTPUTS = ["PRs", "ship"]
 
 LAYERS = [3, 5, 5, 2]
 LAYER_X = [820, 915, 1010, 1105]

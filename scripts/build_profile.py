@@ -1,6 +1,6 @@
 """Daily profile refresh. Standard library only, so it can't break on a dependency.
 
-1. Pulls my public GitHub activity (GraphQL) plus LeetCode and Codeforces ratings.
+1. Pulls my public GitHub activity and upstream PRs (GraphQL), plus LeetCode and Codeforces ratings.
 2. Draws assets/generated/training-run-{light,dark}.svg, a W&B-style panel:
    weekly contributions as a "training curve" (raw + EMA-smoothed), metric
    tiles, and a language mix bar.
@@ -34,6 +34,9 @@ IGNORED_LANGS = {
 }
 # Repos that shouldn't appear in "recently shipped".
 SKIP_RECENT = {LOGIN, "harness-demo-taskboard", "harness-demo-recipes", "harness-demo-bookshop"}
+# Owners whose repos don't count as upstream open source (course repos, my own demo org).
+SKIP_UPSTREAM_OWNERS = {LOGIN, "CODERNSINGH", "MerakiWorks-1"}
+STALE_OPEN_PR_DAYS = 180
 # Fallback one-liners for repos without a GitHub description.
 BLURBS = {
     "Engram": "Bitemporal memory for AI agents, served over MCP (Postgres + pgvector)",
@@ -45,8 +48,17 @@ BLURBS = {
     "ColdCase_RAG": "Citation-first RAG over case files (FAISS + LangChain + Groq)",
 }
 
+NOT_MINE = " ".join(f"-user:{o}" for o in sorted(SKIP_UPSTREAM_OWNERS))
+
 GQL = """
-query($login: String!) {
+query($login: String!, $prq: String!, $isq: String!) {
+  prs: search(query: $prq, type: ISSUE, first: 60) {
+    nodes { ... on PullRequest {
+      title url state merged createdAt
+      repository { nameWithOwner url stargazerCount owner { login } }
+    } }
+  }
+  issues: search(query: $isq, type: ISSUE, first: 1) { issueCount }
   user(login: $login) {
     contributionsCollection {
       contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
@@ -57,7 +69,7 @@ query($login: String!) {
       nodes {
         name description url stargazerCount pushedAt
         primaryLanguage { name }
-              }
+      }
     }
   }
 }
@@ -79,12 +91,16 @@ def github():
         raise SystemExit("Set GITHUB_TOKEN or GH_TOKEN")
     res = http_json(
         "https://api.github.com/graphql",
-        {"query": GQL, "variables": {"login": LOGIN}},
+        {"query": GQL, "variables": {
+            "login": LOGIN,
+            "prq": f"author:{LOGIN} is:pr {NOT_MINE} sort:created-desc",
+            "isq": f"author:{LOGIN} is:issue {NOT_MINE}",
+        }},
         {"Authorization": f"bearer {token}", "Content-Type": "application/json"},
     )
     if "errors" in res:
         raise SystemExit(f"GraphQL error: {res['errors']}")
-    return res["data"]["user"]
+    return res["data"]
 
 
 def leetcode():
@@ -109,6 +125,49 @@ def codeforces():
     except Exception as e:
         print("codeforces: keeping previous values:", e)
         return None, None
+
+
+def upstream(prs):
+    """Merged PRs to other people's projects, plus open ones that aren't stale."""
+    now = dt.datetime.now(dt.timezone.utc)
+    keep = []
+    for pr in prs:
+        if not pr or pr["repository"]["owner"]["login"] in SKIP_UPSTREAM_OWNERS:
+            continue
+        age = (now - dt.datetime.fromisoformat(pr["createdAt"].replace("Z", "+00:00"))).days
+        if pr["merged"] or (pr["state"] == "OPEN" and age <= STALE_OPEN_PR_DAYS):
+            keep.append(pr)
+    return keep
+
+
+def kfmt(n):
+    return f"{n / 1000:.1f}k".replace(".0k", "k") if n >= 1000 else str(n)
+
+
+def upstream_table(prs, limit=10):
+    merged = sum(pr["merged"] for pr in prs)
+    repos = {pr["repository"]["nameWithOwner"] for pr in prs}
+    lines = [
+        f"**{merged} merged · {len(prs) - merged} in review · {len(repos)} repositories** "
+        f"<sub>(auto-updated daily)</sub>",
+        "",
+        "| | project | pull request | status | opened |",
+        "|:-:|:--|:--|:--|:--|",
+    ]
+    for pr in prs[:limit]:
+        repo = pr["repository"]
+        owner = repo["owner"]["login"]
+        title = pr["title"].replace("|", "\\|")
+        status = "🟣&nbsp;merged" if pr["merged"] else "🟢&nbsp;in&nbsp;review"
+        when = dt.date.fromisoformat(pr["createdAt"][:10]).strftime("%b %Y")
+        lines.append(
+            f'| <img src="https://github.com/{owner}.png?size=40" width="20" height="20" alt="{owner}"> '
+            f'| [{repo["nameWithOwner"]}]({repo["url"]}) <sub>★ {kfmt(repo["stargazerCount"])}</sub> '
+            f'| [{title}]({pr["url"]}) | {status} | {when} |'
+        )
+    if not prs:
+        lines = ["_First upstream pull requests in progress._"]
+    return "\n".join(lines)
 
 
 def streaks(days):
@@ -214,14 +273,14 @@ def render(mode, s):
 
     # tiles
     tiles = [
+        ("upstream PRs merged", fmt(s["up_merged"])),
+        ("upstream repos", fmt(s["up_repos"])),
+        ("issues filed upstream", fmt(s["up_issues"])),
         ("contributions · 12 mo", fmt(s["total"])),
-        ("active days", fmt(s["active"])),
         ("current streak", f"{s['current']}d"),
         ("longest streak", f"{s['longest']}d"),
         ("public repos", fmt(s["repos"])),
-        ("stars earned", fmt(s["stars"])),
-        ("leetcode rating", fmt(s["lc_rating"])),
-        ("codeforces max", fmt(s["cf_max"])),
+        ("active days", fmt(s["active"])),
     ]
     tx0, ty0, tw, th, gx, gy = 744, 76, 210, 58, 12, 12
     tile_svg = []
@@ -326,7 +385,9 @@ def ago(iso):
 
 
 def main():
-    user = github()
+    data = github()
+    user = data["user"]
+    up = upstream(data["prs"]["nodes"])
     readme = README.read_text()
 
     cal = user["contributionsCollection"]["contributionCalendar"]
@@ -349,6 +410,9 @@ def main():
         "current": current, "longest": longest, "active": active,
         "repos": user["repositories"]["totalCount"],
         "stars": sum(r["stargazerCount"] for r in repos),
+        "up_merged": sum(pr["merged"] for pr in up),
+        "up_repos": len({pr["repository"]["nameWithOwner"] for pr in up}),
+        "up_issues": data["issues"]["issueCount"],
         "lc_rating": lc_rating, "cf_max": cf_max,
         "langs": language_mix(repos),
         "updated": today.isoformat(), "year": today.year,
@@ -373,6 +437,8 @@ def main():
 
     readme = re.sub(r"(<!--CARD:START-->)(.*?)(<!--CARD:END-->)",
                     lambda m: m.group(1) + card(m.group(2)) + m.group(3), readme, flags=re.S)
+
+    readme = replace_block(readme, "UPSTREAM", upstream_table(up))
 
     # recently shipped
     rows = ["| repo | what | lang | pushed |", "|:--|:--|:--|:--|"]
