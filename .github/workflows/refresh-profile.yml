@@ -1,0 +1,56 @@
+name: refresh-profile
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # daily, 00:00 UTC
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["README.md", "scripts/**", ".github/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-profile
+  cancel-in-progress: true
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Training-run panel + README sections
+        run: python3 scripts/build_profile.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: 3D contribution skyline
+        uses: yoshi389111/github-profile-3d-contrib@v0.9.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+          SETTING_JSON: .github/skyline.json
+
+      - name: Contribution snake
+        uses: Platane/snk@v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          outputs: |
+            snake-out/snake.svg?color_snake=#FF6B5B&color_dots=#E6DDCC,#F8C9C2,#F79C90,#FF6B5B,#C9423A
+            snake-out/snake-dark.svg?palette=github-dark&color_snake=#FF6B5B&color_dots=#22325A,#5A3A48,#9A4A4A,#D9594E,#FF6B5B
+
+      - name: Commit
+        run: |
+          mkdir -p assets/generated
+          mv profile-3d-contrib/skyline-*.svg assets/generated/
+          mv snake-out/*.svg assets/generated/
+          rm -rf profile-3d-contrib snake-out
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A README.md assets/generated
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: refresh profile"
+            git push
+          fi
