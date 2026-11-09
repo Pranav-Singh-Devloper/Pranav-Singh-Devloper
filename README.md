@@ -29,6 +29,11 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
 - **Drawn to:** LLM tooling (agents, memory, retrieval, evaluation), time-series and graph ML, and robots that learn.
 - **Say hi:** [email](mailto:pranav.singh2024@nst.rishihood.edu.in) · [LinkedIn](https://www.linkedin.com/in/pranav-singh-08155a244/) · IST (UTC+5:30). Always happy to pair on an issue.
 
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity-dark.svg">
+  <img alt="Activity overview for the last 12 months: share of commits, issues, pull requests and code review" src="assets/generated/activity-light.svg" width="100%">
+</picture>
+
 ## 🌍 Upstream contributions
 
 <!--UPSTREAM:START-->
@@ -141,10 +146,10 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 | repo | what | lang | pushed |
 |:--|:--|:--|:--|
 | [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | today |
-| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 4 days ago |
-| [**The_Tokenizer**](https://github.com/Pranav-Singh-Devloper/The_Tokenizer) | BPE, byte-level BPE and WordPiece from scratch, GPT-2 parity, live visualizer | `Python` | 5 days ago |
-| [**Engram**](https://github.com/Pranav-Singh-Devloper/Engram) | Bitemporal memory for AI agents, served over MCP (Postgres + pgvector) | `TypeScript` | 5 days ago |
-| [**ml-ab-testing**](https://github.com/Pranav-Singh-Devloper/ml-ab-testing) | Statistically rigorous A/B test of 3 models on 15 OpenML-CC18 datasets | `Python` | 5 days ago |
+| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 5 days ago |
+| [**The_Tokenizer**](https://github.com/Pranav-Singh-Devloper/The_Tokenizer) | BPE, byte-level BPE and WordPiece from scratch, GPT-2 parity, live visualizer | `Python` | 6 days ago |
+| [**Engram**](https://github.com/Pranav-Singh-Devloper/Engram) | Bitemporal memory for AI agents, served over MCP (Postgres + pgvector) | `TypeScript` | 6 days ago |
+| [**ml-ab-testing**](https://github.com/Pranav-Singh-Devloper/ml-ab-testing) | Statistically rigorous A/B test of 3 models on 15 OpenML-CC18 datasets | `Python` | 6 days ago |
 <!--RECENT:END-->
 
 ## 🏙️ Contribution skyline
@@ -233,7 +238,7 @@ languages:     [python, typescript, c++, sql]
 intended_use:  reading, fixing and building open-source AI/ML
 evals:
   public_repos:             42
-  contributions_last_12mo:  824
+  contributions_last_12mo:  825
   leetcode_contest_rating:  1406
   leetcode_solved:          57
   codeforces_max_rating:    1079
@@ -257,5 +262,5 @@ last_trained:  2026-11-09  # refreshed daily by a GitHub Action
 </picture>
 
 <p align="center">
-  <sub>Built in the open. The header, project cards, training run, skyline and snake are drawn by this repo's own <a href=".github/workflows/refresh-profile.yml">GitHub Action</a> and <a href="scripts">scripts</a>. Fork anything.</sub>
+  <sub>Built in the open. The header, project cards, activity overview, training run, skyline and snake are drawn by this repo's own <a href=".github/workflows/refresh-profile.yml">GitHub Action</a> and <a href="scripts">scripts</a>. Fork anything.</sub>
 </p>

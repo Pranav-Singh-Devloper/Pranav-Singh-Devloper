@@ -4,7 +4,9 @@
 2. Draws assets/generated/training-run-{light,dark}.svg, a W&B-style panel:
    weekly contributions as a "training curve" (raw + EMA-smoothed), metric
    tiles, and a language mix bar.
-3. Rewrites the auto-updated parts of README.md between <!--NAME:START/END--> markers.
+3. Draws assets/generated/activity-{light,dark}.svg, a radar of commits /
+   issues / pull requests / code review, like GitHub's activity overview.
+4. Rewrites the auto-updated parts of README.md between <!--NAME:START/END--> markers.
 
 Env: GITHUB_TOKEN (or GH_TOKEN). Locally:  GH_TOKEN=$(gh auth token) python scripts/build_profile.py
 """
@@ -61,6 +63,8 @@ query($login: String!, $prq: String!, $isq: String!) {
   issues: search(query: $isq, type: ISSUE, first: 1) { issueCount }
   user(login: $login) {
     contributionsCollection {
+      totalCommitContributions totalIssueContributions
+      totalPullRequestContributions totalPullRequestReviewContributions
       contributionCalendar { totalContributions weeks { contributionDays { date contributionCount } } }
     }
     repositories(ownerAffiliations: OWNER, isFork: false, privacy: PUBLIC, first: 100,
@@ -367,6 +371,113 @@ def render(mode, s):
 """
 
 
+ACTIVITY_AXES = [  # clockwise from the top, the same layout GitHub uses
+    ("Code review", "totalPullRequestReviewContributions"),
+    ("Issues", "totalIssueContributions"),
+    ("Pull requests", "totalPullRequestContributions"),
+    ("Commits", "totalCommitContributions"),
+]
+
+
+def activity_mix(cc):
+    counts = [(name, cc[key]) for name, key in ACTIVITY_AXES]
+    total = sum(n for _, n in counts) or 1
+    return [(name, n, n / total) for name, n in counts]
+
+
+def render_activity(mode, s):
+    t = THEMES[mode]
+    W, H = 1200, 400
+    mix = s["activity"]
+    total = sum(n for _, n, _ in mix)
+    pmax = max(p for _, _, p in mix) or 1
+
+    # radar panel
+    rx, ry, rw, rh = 24, 72, 560, 304
+    cx, cy = rx + rw / 2, ry + rh / 2
+    arm = {"Code review": (0, -1, 100), "Issues": (1, 0, 150),
+           "Pull requests": (0, 1, 100), "Commits": (-1, 0, 150)}
+    pts, arms, labels = [], [], []
+    for k, (name, n, p) in enumerate(mix):
+        dx, dy, L = arm[name]
+        r = 6 + (L - 6) * p / pmax  # scaled to the biggest share, as GitHub does
+        pts.append((dx * r, dy * r))
+        arms.append(f'<line x1="0" y1="0" x2="{dx * L}" y2="{dy * L}" class="arm"/>')
+        pct = f"{round(p * 100)}%"
+        if dy:  # top / bottom: percent, then name, stacked away from the arm
+            y = cy + dy * (L + 28) if dy < 0 else cy + L + 20
+            labels.append(f'<text x="{cx}" y="{y:.0f}" text-anchor="middle" class="pct">{pct}</text>'
+                          f'<text x="{cx}" y="{y + 18:.0f}" text-anchor="middle" class="axisname">{esc(name)}</text>')
+        else:
+            x = cx + dx * (L + 18)
+            anchor = "end" if dx < 0 else "start"
+            labels.append(f'<text x="{x:.0f}" y="{cy - 4:.0f}" text-anchor="{anchor}" class="pct">{pct}</text>'
+                          f'<text x="{x:.0f}" y="{cy + 14:.0f}" text-anchor="{anchor}" class="axisname">{esc(name)}</text>')
+    poly = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+    dots = "".join(f'<circle cx="{x:.1f}" cy="{y:.1f}" r="5" class="dot"/>' for x, y in pts)
+
+    # breakdown panel
+    bx, by, bw, bh = 600, 72, 576, 304
+    track0, track1 = bx + 150, bx + bw - 86
+    rows = []
+    for k, (name, n, p) in enumerate(sorted(mix, key=lambda m: -m[1])):
+        y = by + 84 + k * 52
+        w = max((track1 - track0) * p, 3) if n else 0
+        rows.append(
+            f'<g class="row" style="animation-delay:{0.2 + k * 0.08:.2f}s">'
+            f'<text x="{bx + 20}" y="{y}" class="rowname">{esc(name)}</text>'
+            f'<text x="{bx + 20}" y="{y + 18}" class="label">{n:,}</text>'
+            f'<rect x="{track0}" y="{y - 4}" width="{track1 - track0}" height="10" rx="5" class="track"/>'
+            f'<rect x="{track0}" y="{y - 4}" width="{w:.1f}" height="10" rx="5" fill="{t["accent"]}"/>'
+            f'<text x="{bx + bw - 20}" y="{y + 7}" text-anchor="end" class="value">{round(p * 100)}%</text></g>'
+        )
+
+    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" role="img" aria-label="Activity overview for {LOGIN}">
+<title>Activity overview, last 12 months: {', '.join(f'{name} {round(p * 100)}%' for name, _, p in mix)}</title>
+<style>
+  .panel {{ fill:{t['panel']}; stroke:{t['line']} }}
+  .head {{ font:600 13px {MONO}; fill:{t['fg']} }}
+  .headm {{ font:500 13px {MONO}; fill:{t['muted']} }}
+  .title {{ font:600 13px {MONO}; fill:{t['fg']}; letter-spacing:.4px }}
+  .sub {{ font:500 11.5px {MONO}; fill:{t['muted']} }}
+  .label {{ font:500 11px {MONO}; fill:{t['muted']}; letter-spacing:.3px }}
+  .value {{ font:700 20px {SERIF}; fill:{t['fg']} }}
+  .rowname {{ font:600 14px {SANS}; fill:{t['fg']} }}
+  .pct {{ font:700 17px {SERIF}; fill:{t['fg']} }}
+  .axisname {{ font:500 13px {SANS}; fill:{t['muted']} }}
+  .arm {{ stroke:{t['accent']}; stroke-width:2.2; stroke-linecap:round; stroke-opacity:.85 }}
+  .shape {{ fill:{t['accent']}; fill-opacity:.32; stroke:{t['accent']}; stroke-width:2.2; stroke-linejoin:round }}
+  .dot {{ fill:{t['panel']}; stroke:{t['accent']}; stroke-width:2.6 }}
+  .track {{ fill:{t['line']}; opacity:.6 }}
+  .grow {{ animation: grow 1.2s cubic-bezier(.3,.7,.2,1) both }}
+  .row {{ animation: rise .6s ease-out both }}
+  .live {{ fill:{t['accent']}; animation: pulse 1.6s ease-in-out infinite }}
+  @keyframes grow {{ from {{ transform:scale(0); opacity:0 }} to {{ transform:scale(1); opacity:1 }} }}
+  @keyframes rise {{ from {{ opacity:0; transform:translateY(6px) }} to {{ opacity:1; transform:none }} }}
+  @keyframes pulse {{ 50% {{ opacity:.25 }} }}
+  @media (prefers-reduced-motion: reduce) {{ .grow, .row, .live {{ animation:none }} }}
+</style>
+<rect width="{W}" height="{H}" rx="18" fill="{t['bg']}"/>
+<rect x=".5" y=".5" width="{W - 1}" height="{H - 1}" rx="18" fill="none" stroke="{t['fg']}" stroke-opacity=".12"/>
+
+<circle cx="40" cy="40" r="5" class="live"/>
+<text x="54" y="44" class="head">activity overview<tspan class="headm" dx="14">last 12 months · {total:,} contributions · refreshed {s['updated']}</tspan></text>
+
+<rect x="{rx}" y="{ry}" width="{rw}" height="{rh}" rx="14" class="panel"/>
+<g transform="translate({cx},{cy})">
+  {''.join(arms)}
+  <g class="grow"><polygon points="{poly}" class="shape"/>{dots}</g>
+</g>
+{''.join(labels)}
+
+<rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="14" class="panel"/>
+<text x="{bx + 20}" y="{by + 28}" class="title">contribution mix</text>
+<text x="{bx + bw - 20}" y="{by + 28}" text-anchor="end" class="sub">share of commits, issues, PRs and reviews</text>
+{''.join(rows)}
+</svg>
+"""
+
+
 # --------------------------------------------------------------------------- readme
 
 def replace_block(text, name, body):
@@ -415,12 +526,14 @@ def main():
         "up_issues": data["issues"]["issueCount"],
         "lc_rating": lc_rating, "cf_max": cf_max,
         "langs": language_mix(repos),
+        "activity": activity_mix(user["contributionsCollection"]),
         "updated": today.isoformat(), "year": today.year,
     }
 
     OUT.mkdir(parents=True, exist_ok=True)
     for mode in ("light", "dark"):
         (OUT / f"training-run-{mode}.svg").write_text(render(mode, stats))
+        (OUT / f"activity-{mode}.svg").write_text(render_activity(mode, stats))
 
     # model card numbers
     def card(block):
@@ -452,7 +565,7 @@ def main():
     readme = replace_block(readme, "RECENT", "\n".join(rows))
 
     README.write_text(readme)
-    print(json.dumps({k: v for k, v in stats.items() if k not in ("weekly", "week_starts")}, default=str, indent=1))
+    print(json.dumps({k: v for k, v in stats.items() if k not in ("weekly", "week_starts", "activity")}, default=str, indent=1))
 
 
 if __name__ == "__main__":
