@@ -1,8 +1,5 @@
 <a href="https://github.com/Pranav-Singh-Devloper">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
-    <img alt="Pranav Singh: open source × AI/ML. I build AI/ML in the open and fix bugs upstream" src="assets/header-light.svg" width="100%">
-  </picture>
+  <img alt="Pranav Singh: open source × AI/ML. I build AI/ML in the open and fix bugs upstream" src="assets/header-light.svg" width="100%">
 </a>
 
 <p align="center">
@@ -131,10 +128,7 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 
 ## Training run
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/training-run-dark.svg">
-  <img alt="My GitHub activity as a training run: weekly contributions, upstream PRs, streaks and language mix" src="assets/generated/training-run-light.svg" width="100%">
-</picture>
+<img alt="My GitHub activity as a training run: weekly contributions, upstream PRs, streaks and language mix" src="assets/generated/training-run-light.svg" width="100%">
 
 <sub>Drawn daily by <a href="scripts/build_profile.py"><code>scripts/build_profile.py</code></a> (standard-library Python), which also keeps the upstream table above current.</sub>
 
@@ -151,10 +145,7 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 
 ## Contribution skyline
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/skyline-dark.svg">
-  <img alt="3D skyline of my contribution calendar" src="assets/generated/skyline-light.svg" width="100%">
-</picture>
+<img alt="3D skyline of my contribution calendar" src="assets/generated/skyline-light.svg" width="100%">
 
 ## Trajectory
 
@@ -175,7 +166,7 @@ timeline
 
 <p>
   <b>ML & data</b><br>
-  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,anaconda&theme=dark" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, Anaconda"><br>
+  <img src="https://skillicons.dev/icons?i=py,pytorch,tensorflow,sklearn,opencv,anaconda&theme=light" alt="Python, PyTorch, TensorFlow, scikit-learn, OpenCV, Anaconda"><br>
   <img src="https://img.shields.io/badge/LangGraph-14213D?style=flat-square&logo=langchain&logoColor=F4EDE0" alt="LangGraph">
   <img src="https://img.shields.io/badge/LangChain-14213D?style=flat-square&logo=langchain&logoColor=F4EDE0" alt="LangChain">
   <img src="https://img.shields.io/badge/Hugging_Face-14213D?style=flat-square&logo=huggingface&logoColor=FFD21E" alt="Hugging Face">
@@ -189,11 +180,11 @@ timeline
 </p>
 <p>
   <b>Backend & infra</b><br>
-  <img src="https://skillicons.dev/icons?i=fastapi,nodejs,express,prisma,postgres,mysql,docker,githubactions,vercel,linux&theme=dark" alt="FastAPI, Node.js, Express, Prisma, Postgres, MySQL, Docker, GitHub Actions, Vercel, Linux">
+  <img src="https://skillicons.dev/icons?i=fastapi,nodejs,express,prisma,postgres,mysql,docker,githubactions,vercel,linux&theme=light" alt="FastAPI, Node.js, Express, Prisma, Postgres, MySQL, Docker, GitHub Actions, Vercel, Linux">
 </p>
 <p>
   <b>Frontend & languages</b><br>
-  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,cpp,git&theme=dark" alt="TypeScript, JavaScript, React, Next.js, Tailwind, C++, Git">
+  <img src="https://skillicons.dev/icons?i=ts,js,react,nextjs,tailwind,cpp,git&theme=light" alt="TypeScript, JavaScript, React, Next.js, Tailwind, C++, Git">
 </p>
 
 <details>
@@ -253,10 +244,7 @@ last_trained:  2026-11-09  # refreshed daily by a GitHub Action
 
 ---
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/snake-dark.svg">
-  <img alt="Snake eating my contribution graph" src="assets/generated/snake.svg" width="100%">
-</picture>
+<img alt="Snake eating my contribution graph" src="assets/generated/snake.svg" width="100%">
 
 <p align="center">
   <sub>Built in the open. The header, project cards, activity overview, training run, skyline and snake are drawn by this repo's own <a href=".github/workflows/refresh-profile.yml">GitHub Action</a> and <a href="scripts">scripts</a>. Fork anything.</sub>
