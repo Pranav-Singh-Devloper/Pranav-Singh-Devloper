@@ -20,7 +20,7 @@
 
 $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open issues}}\left[\mathcal{L}_{\text{merged}}(x;\theta)\right]$$
 
-## ❤️ Open source × AI/ML
+## Open source × AI/ML
 
 > I learn a system by reading its source, and I say thanks by fixing what I find.
 
@@ -34,7 +34,7 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
   <img alt="Activity overview for the last 12 months: share of commits, issues, pull requests and code review" src="assets/generated/activity-light.svg" width="100%">
 </picture>
 
-## 🌍 Upstream contributions
+## Upstream contributions
 
 <!--UPSTREAM:START-->
 **6 merged · 4 in review · 6 repositories** <sub>(auto-updated daily)</sub>
@@ -53,7 +53,7 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
 | <img src="https://github.com/anuragverma108.png?size=40" width="20" height="20" alt="anuragverma108"> | [anuragverma108/WildGuard](https://github.com/anuragverma108/WildGuard) <sub>★ 210</sub> | [Improved the UI of the "Share your thoughts section"](https://github.com/anuragverma108/WildGuard/pull/1471) | 🟣&nbsp;merged | Oct 2024 |
 <!--UPSTREAM:END-->
 
-## 🧪 Flagship projects
+## Flagship projects
 
 <table>
 <tr>
@@ -121,7 +121,7 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 | Reproducible pipelines | Traffic Oracle rebuilds from raw data with `make data`, which verifies downloads and writes a manifest; models run on 3 seeds |
 | Honest evaluation | [ML A/B Testing](https://github.com/Pranav-Singh-Devloper/ml-ab-testing) pre-registers its method and shows how the choice of test changes the result |
 
-## 📊 More projects
+## More projects
 
 | project | what | headline | stack |
 |:--|:--|:--|:--|
@@ -132,7 +132,7 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 | [**Telecom Churn**](https://github.com/Pranav-Singh-Devloper/telecom_churn_prediction) | Churn prediction with explanations | Cost-sensitive threshold + SMOTE · [Space](https://huggingface.co/spaces/pranav-singh-developer-1/telecom-churn-predictor) | scikit-learn · Gradio |
 | [**RankShift**](https://github.com/Pranav-Singh-Devloper/RankShift-contest-rating-engine) | Contest rating engine | Rating update as a steady-state **Kalman filter** (K = 0.5) | TypeScript · Postgres |
 
-## 📈 Training run
+## Training run
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/training-run-dark.svg">
@@ -141,7 +141,7 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 
 <sub>Drawn daily by <a href="scripts/build_profile.py"><code>scripts/build_profile.py</code></a> (standard-library Python), which also keeps the upstream table above current.</sub>
 
-### 🚢 Recently shipped
+### Recently shipped
 <!--RECENT:START-->
 | repo | what | lang | pushed |
 |:--|:--|:--|:--|
@@ -152,14 +152,14 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 | [**ml-ab-testing**](https://github.com/Pranav-Singh-Devloper/ml-ab-testing) | Statistically rigorous A/B test of 3 models on 15 OpenML-CC18 datasets | `Python` | 6 days ago |
 <!--RECENT:END-->
 
-## 🏙️ Contribution skyline
+## Contribution skyline
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/generated/skyline-dark.svg">
   <img alt="3D skyline of my contribution calendar" src="assets/generated/skyline-light.svg" width="100%">
 </picture>
 
-## 🛤️ Trajectory
+## Trajectory
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables':{'fontFamily':'ui-sans-serif, system-ui','cScale0':'#14213D','cScaleLabel0':'#F4EDE0','cScale1':'#FF6B5B','cScaleLabel1':'#14213D','cScale2':'#F2B84B','cScaleLabel2':'#14213D'}}}%%
@@ -174,7 +174,7 @@ timeline
          : PRs to crewAI and Apicurio Registry
 ```
 
-## 🧰 Toolchain
+## Toolchain
 
 <p>
   <b>ML & data</b><br>
