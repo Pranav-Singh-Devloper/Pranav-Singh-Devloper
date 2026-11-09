@@ -29,10 +29,7 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
 - **Drawn to:** LLM tooling (agents, memory, retrieval, evaluation), time-series and graph ML, and robots that learn.
 - **Say hi:** [email](mailto:pranav.singh2024@nst.rishihood.edu.in) · [LinkedIn](https://www.linkedin.com/in/pranav-singh-08155a244/) · IST (UTC+5:30). Always happy to pair on an issue.
 
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/generated/activity-dark.svg">
-  <img alt="Activity overview for the last 12 months: share of commits, issues, pull requests and code review" src="assets/generated/activity-light.svg" width="100%">
-</picture>
+<img alt="Activity overview for the last 12 months: share of commits, issues, pull requests and code review" src="assets/generated/activity-light.svg" width="100%">
 
 ## Upstream contributions
 
