@@ -27,7 +27,7 @@
 <rect x=".5" y=".5" width="1199" height="399" rx="18" fill="none" stroke="#14213D" stroke-opacity=".12"/>
 
 <circle cx="40" cy="40" r="5" class="live"/>
-<text x="54" y="44" class="head">activity overview<tspan class="headm" dx="14">last 12 months · 796 contributions · refreshed 2026-11-13</tspan></text>
+<text x="54" y="44" class="head">activity overview<tspan class="headm" dx="14">last 12 months · 796 contributions · refreshed 2026-11-14</tspan></text>
 
 <rect x="24" y="72" width="560" height="304" rx="14" class="panel"/>
 <g transform="translate(304.0,224.0)">
