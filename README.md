@@ -31,20 +31,20 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
 ## Upstream contributions
 
 <!--UPSTREAM:START-->
-**6 merged · 4 in review · 6 repositories** <sub>(auto-updated daily)</sub>
+**6 merged · 5 in review · 6 repositories** <sub>(auto-updated daily)</sub>
 
 | | project | pull request | status | opened |
 |:-:|:--|:--|:--|:--|
+| <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 60.9k</sub> | [fix(cli): read and write .env as UTF-8](https://github.com/crewAIInc/crewAI/pull/9445) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 513</sub> | [Show the real reason when an exercise can't be opened](https://github.com/JdeRobot/RoboticsAcademy/pull/4111) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsApplicationManager](https://github.com/JdeRobot/RoboticsApplicationManager) <sub>★ 12</sub> | [Send user code stderr to the exercise console](https://github.com/JdeRobot/RoboticsApplicationManager/pull/307) | 🟣&nbsp;merged | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 513</sub> | [Only send GUI messages once the websocket is connected](https://github.com/JdeRobot/RoboticsAcademy/pull/4101) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/Apicurio.png?size=40" width="20" height="20" alt="Apicurio"> | [Apicurio/apicurio-registry](https://github.com/Apicurio/apicurio-registry) <sub>★ 955</sub> | [fix(rest): normalize pagination parameters in v3 groups endpoints](https://github.com/Apicurio/apicurio-registry/pull/10854) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
+| <img src="https://github.com/Apicurio.png?size=40" width="20" height="20" alt="Apicurio"> | [Apicurio/apicurio-registry](https://github.com/Apicurio/apicurio-registry) <sub>★ 956</sub> | [fix(rest): normalize pagination parameters in v3 groups endpoints](https://github.com/Apicurio/apicurio-registry/pull/10854) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 60.9k</sub> | [fix(tools): let DirectoryReadTool list its declared directory outside cwd](https://github.com/crewAIInc/crewAI/pull/9072) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 513</sub> | [Use model_path_func in DL exercise example code](https://github.com/JdeRobot/RoboticsAcademy/pull/4097) | 🟣&nbsp;merged | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 513</sub> | [Fix broken image paths in exercise docs](https://github.com/JdeRobot/RoboticsAcademy/pull/4095) | 🟣&nbsp;merged | Nov 2026 |
 | <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 60.9k</sub> | [fix(flow): restore state for method-level @persist on resume and fork](https://github.com/crewAIInc/crewAI/pull/9021) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/R0Y15.png?size=40" width="20" height="20" alt="R0Y15"> | [R0Y15/WeatherNow](https://github.com/R0Y15/WeatherNow) <sub>★ 38</sub> | [Fixed the UI and UX of Navigation bar on issue #128](https://github.com/R0Y15/WeatherNow/pull/132) | 🟣&nbsp;merged | Oct 2024 |
-| <img src="https://github.com/anuragverma108.png?size=40" width="20" height="20" alt="anuragverma108"> | [anuragverma108/WildGuard](https://github.com/anuragverma108/WildGuard) <sub>★ 210</sub> | [Improved the UI of the "Share your thoughts section"](https://github.com/anuragverma108/WildGuard/pull/1471) | 🟣&nbsp;merged | Oct 2024 |
 <!--UPSTREAM:END-->
 
 ## Flagship projects
@@ -136,11 +136,11 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 <!--RECENT:START-->
 | repo | what | lang | pushed |
 |:--|:--|:--|:--|
-| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 4 days ago |
-| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 9 days ago |
-| [**The_Tokenizer**](https://github.com/Pranav-Singh-Devloper/The_Tokenizer) | BPE, byte-level BPE and WordPiece from scratch, GPT-2 parity, live visualizer | `Python` | 10 days ago |
-| [**Engram**](https://github.com/Pranav-Singh-Devloper/Engram) | Bitemporal memory for AI agents, served over MCP (Postgres + pgvector) | `TypeScript` | 10 days ago |
-| [**ml-ab-testing**](https://github.com/Pranav-Singh-Devloper/ml-ab-testing) | Statistically rigorous A/B test of 3 models on 15 OpenML-CC18 datasets | `Python` | 10 days ago |
+| [**task_manager**](https://github.com/Pranav-Singh-Devloper/task_manager) |  | `TypeScript` | today |
+| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 5 days ago |
+| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 10 days ago |
+| [**The_Tokenizer**](https://github.com/Pranav-Singh-Devloper/The_Tokenizer) | BPE, byte-level BPE and WordPiece from scratch, GPT-2 parity, live visualizer | `Python` | 11 days ago |
+| [**Engram**](https://github.com/Pranav-Singh-Devloper/Engram) | Bitemporal memory for AI agents, served over MCP (Postgres + pgvector) | `TypeScript` | 11 days ago |
 <!--RECENT:END-->
 
 ## Contribution skyline
@@ -225,8 +225,8 @@ capabilities:  [llm-agents, rag, agent-memory, gnns, tokenization, a/b-tests]
 languages:     [python, typescript, c++, sql]
 intended_use:  reading, fixing and building open-source AI/ML
 evals:
-  public_repos:             42
-  contributions_last_12mo:  830
+  public_repos:             43
+  contributions_last_12mo:  980
   leetcode_contest_rating:  1406
   leetcode_solved:          57
   codeforces_max_rating:    1079
@@ -236,7 +236,7 @@ known_limitations:
   - rebuilds things from scratch to understand them
   - won't ship a README without a benchmark table
 powered_by:    open source  # so I give back upstream
-last_trained:  2026-11-14  # refreshed daily by a GitHub Action
+last_trained:  2026-11-15  # refreshed daily by a GitHub Action
 ```
 <!--CARD:END-->
 
