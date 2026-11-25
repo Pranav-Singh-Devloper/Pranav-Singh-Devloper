@@ -136,11 +136,11 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 <!--RECENT:START-->
 | repo | what | lang | pushed |
 |:--|:--|:--|:--|
-| [**task_manager**](https://github.com/Pranav-Singh-Devloper/task_manager) |  | `TypeScript` | 2 days ago |
-| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 15 days ago |
-| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 20 days ago |
-| [**The_Tokenizer**](https://github.com/Pranav-Singh-Devloper/The_Tokenizer) | BPE, byte-level BPE and WordPiece from scratch, GPT-2 parity, live visualizer | `Python` | 20 days ago |
-| [**Engram**](https://github.com/Pranav-Singh-Devloper/Engram) | Bitemporal memory for AI agents, served over MCP (Postgres + pgvector) | `TypeScript` | 20 days ago |
+| [**flaglens**](https://github.com/Pranav-Singh-Devloper/flaglens) | VS Code extension for self-hosted Flagsmith: live flag states inline, safe toggles, dri… | `TypeScript` | today |
+| [**arambh_clan_reveal_animations**](https://github.com/Pranav-Singh-Devloper/arambh_clan_reveal_animations) |  | `HTML` | today |
+| [**task_manager**](https://github.com/Pranav-Singh-Devloper/task_manager) |  | `TypeScript` | today |
+| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 16 days ago |
+| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 21 days ago |
 <!--RECENT:END-->
 
 ## Contribution skyline
@@ -225,8 +225,8 @@ capabilities:  [llm-agents, rag, agent-memory, gnns, tokenization, a/b-tests]
 languages:     [python, typescript, c++, sql]
 intended_use:  reading, fixing and building open-source AI/ML
 evals:
-  public_repos:             43
-  contributions_last_12mo:  1009
+  public_repos:             44
+  contributions_last_12mo:  1040
   leetcode_contest_rating:  1406
   leetcode_solved:          57
   codeforces_max_rating:    1079
@@ -236,7 +236,7 @@ known_limitations:
   - rebuilds things from scratch to understand them
   - won't ship a README without a benchmark table
 powered_by:    open source  # so I give back upstream
-last_trained:  2026-11-24  # refreshed daily by a GitHub Action
+last_trained:  2026-11-25  # refreshed daily by a GitHub Action
 ```
 <!--CARD:END-->
 
