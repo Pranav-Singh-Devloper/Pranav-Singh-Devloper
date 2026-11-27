@@ -31,20 +31,20 @@ $$\theta^{\ast}_{\text{pranav}} = \arg\min_{\theta}\ \mathbb{E}_{x\sim\text{open
 ## Upstream contributions
 
 <!--UPSTREAM:START-->
-**8 merged · 4 in review · 7 repositories** <sub>(auto-updated daily)</sub>
+**9 merged · 5 in review · 8 repositories** <sub>(auto-updated daily)</sub>
 
 | | project | pull request | status | opened |
 |:-:|:--|:--|:--|:--|
+| <img src="https://github.com/Apicurio.png?size=40" width="20" height="20" alt="Apicurio"> | [Apicurio/apicurio-registry](https://github.com/Apicurio/apicurio-registry) <sub>★ 963</sub> | [fix(rest): reject unsupported orderby values in contract search](https://github.com/Apicurio/apicurio-registry/pull/11527) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
+| <img src="https://github.com/Flagsmith.png?size=40" width="20" height="20" alt="Flagsmith"> | [Flagsmith/flagsmith](https://github.com/Flagsmith/flagsmith) <sub>★ 10.3k</sub> | [fix(Features): Allow partial updates of segment overrides via the feature states API](https://github.com/Flagsmith/flagsmith/pull/9123) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/kunaldevsahu.png?size=40" width="20" height="20" alt="kunaldevsahu"> | [kunaldevsahu/mips-single-cycle-processor](https://github.com/kunaldevsahu/mips-single-cycle-processor) <sub>★ 0</sub> | [Program counter, branch/jump logic, muxes and test programs](https://github.com/kunaldevsahu/mips-single-cycle-processor/pull/2) | 🟣&nbsp;merged | Nov 2026 |
 | <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 61.3k</sub> | [fix(cli): read and write .env as UTF-8](https://github.com/crewAIInc/crewAI/pull/9445) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 520</sub> | [Show the real reason when an exercise can't be opened](https://github.com/JdeRobot/RoboticsAcademy/pull/4111) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
+| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 521</sub> | [Show the real reason when an exercise can't be opened](https://github.com/JdeRobot/RoboticsAcademy/pull/4111) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
 | <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsApplicationManager](https://github.com/JdeRobot/RoboticsApplicationManager) <sub>★ 13</sub> | [Send user code stderr to the exercise console](https://github.com/JdeRobot/RoboticsApplicationManager/pull/307) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 520</sub> | [Only send GUI messages once the websocket is connected](https://github.com/JdeRobot/RoboticsAcademy/pull/4101) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/Apicurio.png?size=40" width="20" height="20" alt="Apicurio"> | [Apicurio/apicurio-registry](https://github.com/Apicurio/apicurio-registry) <sub>★ 962</sub> | [fix(rest): normalize pagination parameters in v3 groups endpoints](https://github.com/Apicurio/apicurio-registry/pull/10854) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
+| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 521</sub> | [Only send GUI messages once the websocket is connected](https://github.com/JdeRobot/RoboticsAcademy/pull/4101) | 🟣&nbsp;merged | Nov 2026 |
+| <img src="https://github.com/Apicurio.png?size=40" width="20" height="20" alt="Apicurio"> | [Apicurio/apicurio-registry](https://github.com/Apicurio/apicurio-registry) <sub>★ 963</sub> | [fix(rest): normalize pagination parameters in v3 groups endpoints](https://github.com/Apicurio/apicurio-registry/pull/10854) | 🟣&nbsp;merged | Nov 2026 |
 | <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 61.3k</sub> | [fix(tools): let DirectoryReadTool list its declared directory outside cwd](https://github.com/crewAIInc/crewAI/pull/9072) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
-| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 520</sub> | [Use model_path_func in DL exercise example code](https://github.com/JdeRobot/RoboticsAcademy/pull/4097) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 520</sub> | [Fix broken image paths in exercise docs](https://github.com/JdeRobot/RoboticsAcademy/pull/4095) | 🟣&nbsp;merged | Nov 2026 |
-| <img src="https://github.com/crewAIInc.png?size=40" width="20" height="20" alt="crewAIInc"> | [crewAIInc/crewAI](https://github.com/crewAIInc/crewAI) <sub>★ 61.3k</sub> | [fix(flow): restore state for method-level @persist on resume and fork](https://github.com/crewAIInc/crewAI/pull/9021) | 🟢&nbsp;in&nbsp;review | Nov 2026 |
+| <img src="https://github.com/JdeRobot.png?size=40" width="20" height="20" alt="JdeRobot"> | [JdeRobot/RoboticsAcademy](https://github.com/JdeRobot/RoboticsAcademy) <sub>★ 521</sub> | [Use model_path_func in DL exercise example code](https://github.com/JdeRobot/RoboticsAcademy/pull/4097) | 🟣&nbsp;merged | Nov 2026 |
 <!--UPSTREAM:END-->
 
 ## Flagship projects
@@ -136,11 +136,11 @@ BPE, byte-level BPE and WordPiece written from scratch in pure Python with zero 
 <!--RECENT:START-->
 | repo | what | lang | pushed |
 |:--|:--|:--|:--|
-| [**flaglens**](https://github.com/Pranav-Singh-Devloper/flaglens) | VS Code extension for self-hosted Flagsmith: live flag states inline, safe toggles, dri… | `TypeScript` | today |
-| [**task_manager**](https://github.com/Pranav-Singh-Devloper/task_manager) |  | `TypeScript` | today |
-| [**arambh_clan_reveal_animations**](https://github.com/Pranav-Singh-Devloper/arambh_clan_reveal_animations) |  | `HTML` | yesterday |
-| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 17 days ago |
-| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 22 days ago |
+| [**flaglens**](https://github.com/Pranav-Singh-Devloper/flaglens) | See, test and trust self-hosted Flagsmith flags in VS Code: greys out code that can't r… | `TypeScript` | today |
+| [**task_manager**](https://github.com/Pranav-Singh-Devloper/task_manager) |  | `TypeScript` | yesterday |
+| [**arambh_clan_reveal_animations**](https://github.com/Pranav-Singh-Devloper/arambh_clan_reveal_animations) |  | `HTML` | 2 days ago |
+| [**nexus-project**](https://github.com/Pranav-Singh-Devloper/nexus-project) | Research agent → cited market report → LinkedIn post, end to end | `JavaScript` | 18 days ago |
+| [**the-daily-algorithm**](https://github.com/Pranav-Singh-Devloper/the-daily-algorithm) | The Daily Algorithm — newspaper-editorial AI/ML portfolio of Pranav Singh | `JavaScript` | 23 days ago |
 <!--RECENT:END-->
 
 ## Contribution skyline
@@ -226,7 +226,7 @@ languages:     [python, typescript, c++, sql]
 intended_use:  reading, fixing and building open-source AI/ML
 evals:
   public_repos:             44
-  contributions_last_12mo:  1092
+  contributions_last_12mo:  1111
   leetcode_contest_rating:  1406
   leetcode_solved:          57
   codeforces_max_rating:    1079
@@ -236,7 +236,7 @@ known_limitations:
   - rebuilds things from scratch to understand them
   - won't ship a README without a benchmark table
 powered_by:    open source  # so I give back upstream
-last_trained:  2026-11-26  # refreshed daily by a GitHub Action
+last_trained:  2026-11-27  # refreshed daily by a GitHub Action
 ```
 <!--CARD:END-->
 
